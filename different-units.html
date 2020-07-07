@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adaptive + units</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+    <style>
+        body{
+            --size: 50vh;
+            --left: calc( 100vw / 3 - var(--size) / 2 );
+            --color-dark: rgb(0, 0, 0);
+            --color-light: rgba(3, 39, 136, 0.424);
+            --color-mute: rgb(48, 48, 54);
+
+            /* background-color:var(--color-dark); */
+            background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm21-paper-sasi-112.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=ad49d9393555ca921df032f5f5cafea1");
+        }
+        .vertical-center{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .circle{
+            width: var(--size);
+            height: var(--size);
+            background-color: var(--color-light);
+            border-radius: 100%;
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            left: var(--left);
+            /* back: transfort, margin-left -minus */
+            /* transfort: translateX(-20vh); */  
+            box-shadow:0 0 20px black;    
+        }
+        .line{
+            width: 100vw;
+            height: calc( var(--size) / 2.1);
+            /* background-color: var(--color-mute); */
+            background-image: radial-gradient(transparent 50%, var(--color-mute) 51%);
+            background-size: 10px 20px;
+        
+            left: calc( -1 * var(--left));  /*  left: calc( var(--size) / 2 - 100vw / 3); */
+            filter: drop-shadow(3px 8px 15px rgb(8, 8, 8));
+        
+        }
+    .images {
+        height: calc(var(--size) / 2 - 2 * 20px);
+        background-color: var(--color-mute);
+        position: relative;
+        top: 20px;
+    }
+    .images img{
+        width: 15%;
+        margin-left: 5px;
+        mix-blend-mode: overlay;
+    }
+    .images img:hover{
+        mix-blend-mode:lighten;
+    
+    }
+    .circle-sm{
+        width: calc(var(--size) / 1.5);
+            height: calc(var(--size) / 1.5);
+            background-color: var(--color-light);
+            border-radius: 100%;
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+            left: calc(var(--left) / 4.5);
+            border: 1px solid black;
+            box-shadow:0 0 5px black;    
+    }
+    i{
+        position: absolute;
+        left: 80px;
+        top: 80px;
+        font-size: 60px;
+        color: rgb(235, 231, 231);
+    }
+  
+    </style>
+</head>
+<body>
+    <div class="circle vertical-center lg">
+        <div class="line vertical-center">
+            <div class="images">
+          <img src="https://i.picsum.photos/id/1055/536/354.jpg?hmac=Hn5PGfnC-Vl2rw83fls2cbf4Erp2tKUF1vJFW9xkU5w" alt="">
+          <img src="https://i.picsum.photos/id/237/536/354.jpg?hmac=i0yVXW1ORpyCZpQ-CknuyV-jbtU7_x9EBQVhvT5aRr0" alt="">
+          <img src="https://i.picsum.photos/id/866/536/354.jpg?hmac=tGofDTV7tl2rprappPzKFiZ9vDh5MKj39oa2D--gqhA" alt="">
+          <img src="https://i.picsum.photos/id/1060/536/354.jpg?blur=2&hmac=0zJLs1ar00sBbW5Ahd_4zA6pgZqCVavwuHToO6VtcYY" alt="">
+          <img src="https://i.picsum.photos/id/1084/536/354.jpg?grayscale&hmac=Ux7nzg19e1q35mlUVZjhCLxqkR30cC-CarVg-nlIf60" alt="">
+          <img src="https://i.picsum.photos/id/870/536/354.jpg?blur=2&grayscale&hmac=A5T7lnprlMMlQ18KQcVMi3b7Bwa1Qq5YJFp8LSudZ84" alt="">
+         
+        </div>
+        </div>
+        <div  class="circle-sm"> <i class="fab fa-youtube"></i> </div>
+    </div>
+</body>
+</html>
